@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_04_11_201710) do
     t.string "species"
     t.text "description"
     t.integer "show_id", null: false
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["show_id"], name: "index_characters_on_show_id"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_04_11_201710) do
     t.string "status"
     t.date "release_date"
     t.integer "seasons"
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

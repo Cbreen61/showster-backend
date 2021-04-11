@@ -5,8 +5,8 @@ class CreateShows < ActiveRecord::Migration[6.1]
       t.string :status
       t.date :release_date
       t.integer :seasons
-      t.integer :likes
-      t.integer :dislikes
+      t.integer :likes, default: 0
+      t.integer :dislikes, default: 0
       t.text :description
 
       t.timestamps
