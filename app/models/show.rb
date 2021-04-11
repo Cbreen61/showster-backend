@@ -10,7 +10,7 @@ class Show < ApplicationRecord
 
     def instance_to_json
         {   id: self.id,
-            name: self.title,
+            title: self.title,
             status: self.status,
             release_date: self.release_date,
             seasons: self.seasons,

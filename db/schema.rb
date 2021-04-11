@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_201710) do
     t.string "name"
     t.string "status"
     t.string "species"
-    t.text "descripption"
+    t.text "description"
     t.integer "show_id", null: false
     t.integer "likes"
     t.integer "dislikes"

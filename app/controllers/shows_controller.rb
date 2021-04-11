@@ -5,12 +5,12 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.all
 
-    render json: @shows
+    render json: @shows.arr_to_json
   end
 
   # GET /shows/1
   def show
-    render json: @show
+    render json: @show.instance_to_json
   end
 
   # POST /shows
@@ -18,18 +18,18 @@ class ShowsController < ApplicationController
     @show = Show.new(show_params)
 
     if @show.save
-      render json: @show, status: :created, location: @show
+      render json: @show.instance_to_json, status: :created, location: @show.instance_to_json
     else
-      render json: @show.errors, status: :unprocessable_entity
+      render json: @show.instance_to_json.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /shows/1
   def update
     if @show.update(show_params)
-      render json: @show
+      render json: @show.instance_to_json
     else
-      render json: @show.errors, status: :unprocessable_entity
+      render json: @show.instance_to_json.errors, status: :unprocessable_entity
     end
   end
 
