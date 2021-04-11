@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_201710) do
     t.integer "show_id", null: false
     t.integer "likes", default: 0
     t.integer "dislikes", default: 0
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["show_id"], name: "index_characters_on_show_id"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_201710) do
     t.integer "likes", default: 0
     t.integer "dislikes", default: 0
     t.text "description"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

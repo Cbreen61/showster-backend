@@ -17,6 +17,7 @@ class Character < ApplicationRecord
             description: self.description,
             likes: self.likes,
             dislikes: self.dislikes,
+            image: self.image,
             show: self.show.title
         }
     end

@@ -17,6 +17,7 @@ class Show < ApplicationRecord
             likes: self.likes,
             dislikes: self.dislikes,
             description: self.description,
+            image: self.image,
             characters: self.characters.arrc_to_json
         }
     end
