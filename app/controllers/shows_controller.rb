@@ -18,7 +18,7 @@ class ShowsController < ApplicationController
     @show = Show.new(show_params)
 
     if @show.save
-      render json: @show.instance_to_json, status: :created, location: @show.instance_to_json
+      render json: @show.instance_to_json
     else
       render json: @show.instance_to_json.errors, status: :unprocessable_entity
     end
