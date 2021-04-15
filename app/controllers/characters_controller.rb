@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :update, :destroy]
+  before_action :set_show
 
   # GET /characters
   def index
@@ -15,10 +16,10 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
-    @character = Character.new(character_params)
+    @character = @show.characters.new(character_params)
 
     if @character.save
-      render json: @character.instance_to_json, status: :created, location: @character.instance_to_json
+      render json: @show.instance_to_json
     else
       render json: @character.instance_to_json.errors, status: :unprocessable_entity
     end
@@ -42,6 +43,9 @@ class CharactersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_character
       @character = Character.find(params[:id])
+    end
+    def set_show
+      @show = Show.find(params[:show_id])
     end
 
     # Only allow a list of trusted parameters through.

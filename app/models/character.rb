@@ -18,7 +18,7 @@ class Character < ApplicationRecord
             likes: self.likes,
             dislikes: self.dislikes,
             image: self.image,
-            show: self.show.title
+            show_id: self.show.id
         }
     end
 
